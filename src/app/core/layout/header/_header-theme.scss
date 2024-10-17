@@ -1,7 +1,8 @@
 @use "@angular/material" as mat;
 
+// @include mat.button-density(-1);
+
 @mixin color($t) {
-  // @include mat.button-density(-1);
   .appbar {
     background-color: mat.get-theme-color($t, primary);
     color: mat.get-theme-color($t, on-primary);
@@ -27,11 +28,7 @@
 }
 
 @mixin typography($t) {
-  .appbar {
-    &-name {
-      font: mat.get-theme-typography($t, headline-small, font);
-    }
-  }
+  // Ici on change les polices spécifiques au thème
 }
 
 @mixin theme($t) {
