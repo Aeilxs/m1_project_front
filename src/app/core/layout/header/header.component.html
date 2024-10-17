@@ -1,0 +1,21 @@
+<mat-toolbar class="appbar">
+  <div routerLink="" class="appbar-title">
+    <mat-icon class="appbar-logo">gavel</mat-icon>
+    <span class="appbar-name">Contractor 3000</span>
+  </div>
+
+  <nav class="appbar-nav" aria-label="Links container">
+    <button mat-button routerLink="dashboard" class="appbar-nav-item">dashboard</button>
+    <button mat-button routerLink="" disabled class="appbar-nav-item">contracts</button>
+    <button mat-button routerLink="" disabled class="appbar-nav-item">password manager</button>
+  </nav>
+
+  <span class="appbar-spacer"></span>
+
+  <button mat-icon-button routerLink="signup" aria-label="To login page">
+    <mat-icon>login</mat-icon>
+  </button>
+  <button mat-icon-button (click)="toggleTheme()" aria-label="Toggle theme button">
+    <mat-icon>{{ theme() === "light" ? "light_mode" : "dark_mode" }}</mat-icon>
+  </button>
+</mat-toolbar>
