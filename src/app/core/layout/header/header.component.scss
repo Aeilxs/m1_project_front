@@ -2,7 +2,6 @@
   &-title {
     display: flex;
     align-items: center;
-
     &:hover {
       cursor: pointer;
     }
@@ -12,7 +11,7 @@
     }
 
     & .appbar-name {
-      margin-right: 2rem;
+      margin-right: 1rem;
     }
   }
 
@@ -30,6 +29,21 @@
       margin-left: 0.2rem;
       padding-left: 0.5rem;
       padding-right: 0.5rem;
+    }
+  }
+
+  &-menu-button {
+    display: none;
+  }
+
+  @media (max-width: 730px) {
+    &-nav {
+      display: none;
+    }
+
+    &-menu-button {
+      display: inline-flex;
+      margin-right: 1rem;
     }
   }
 }
