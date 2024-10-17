@@ -1,35 +1,38 @@
-<mat-toolbar class="appbar">
-  <!-- Menu button for small screens -->
-  <button mat-icon-button [matMenuTriggerFor]="menu" class="appbar-menu-button" aria-label="Open menu">
-    <mat-icon>menu</mat-icon>
-  </button>
+<div>
+  <mat-toolbar class="appbar">
+    <!-- Menu button for small screens -->
+    <button mat-icon-button [matMenuTriggerFor]="menu" class="appbar-menu-button" aria-label="Open menu">
+      <mat-icon>menu</mat-icon>
+    </button>
 
-  <div routerLink="" class="appbar-title">
-    <mat-icon class="appbar-logo">gavel</mat-icon>
-    <span class="appbar-name">Contractor 3000</span>
-  </div>
+    <!-- Title block -->
+    <div routerLink="" class="appbar-title">
+      <mat-icon class="appbar-logo">gavel</mat-icon>
+      <h1 class="appbar-name">Smart Contract</h1>
+    </div>
 
-  <!-- Navbar default -->
-  <nav class="appbar-nav">
-    <button mat-button routerLink="dashboard" class="appbar-nav-item">dashboard</button>
-    <button mat-button routerLink="" disabled class="appbar-nav-item">contracts</button>
-    <button mat-button routerLink="" disabled class="appbar-nav-item">password manager</button>
-  </nav>
+    <!-- Navbar default -->
+    <nav class="appbar-nav">
+      <button mat-flat-button routerLink="dashboard" class="appbar-nav-item">dashboard</button>
+      <button mat-flat-button routerLink="" class="appbar-nav-item">contracts</button>
+      <button mat-flat-button routerLink="" class="appbar-nav-item">password manager</button>
+    </nav>
 
-  <!-- Navbar small -->
-  <mat-menu #menu="matMenu">
-    <button mat-menu-item routerLink="dashboard">Dashboard</button>
-    <button mat-menu-item routerLink="" disabled>Contracts</button>
-    <button mat-menu-item routerLink="" disabled>Password Manager</button>
-  </mat-menu>
+    <!-- Navbar small -->
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item routerLink="dashboard">Dashboard</button>
+      <button mat-menu-item routerLink="">Contracts</button>
+      <button mat-menu-item routerLink="">Password Manager</button>
+    </mat-menu>
 
-  <span class="appbar-spacer"></span>
+    <span class="appbar-spacer"></span>
 
-  <!-- Themes / Login -->
-  <button mat-icon-button routerLink="signup" aria-label="To login">
-    <mat-icon>login</mat-icon>
-  </button>
-  <button mat-icon-button (click)="toggleTheme()" aria-label="Toggle theme button">
-    <mat-icon>{{ theme() === "light" ? "light_mode" : "dark_mode" }}</mat-icon>
-  </button>
-</mat-toolbar>
+    <!-- Themes / Login -->
+    <button class="iconbtn" mat-icon-button routerLink="signup" aria-label="To login">
+      <mat-icon>login</mat-icon>
+    </button>
+    <button class="iconbtn" mat-icon-button (click)="toggleTheme()" aria-label="Toggle theme button">
+      <mat-icon>{{ theme() === "light" ? "light_mode" : "dark_mode" }}</mat-icon>
+    </button>
+  </mat-toolbar>
+</div>

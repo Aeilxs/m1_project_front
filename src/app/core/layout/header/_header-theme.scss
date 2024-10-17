@@ -1,0 +1,45 @@
+@use "@angular/material" as mat;
+
+@mixin color($t) {
+  // @include mat.button-density(-1);
+  .appbar {
+    background-color: mat.get-theme-color($t, primary);
+    color: mat.get-theme-color($t, on-primary);
+
+    mat-icon {
+      color: mat.get-theme-color($t, on-primary);
+    }
+
+    &-nav > *:hover {
+      @include mat.elevation(5);
+    }
+  }
+
+  .iconbtn:hover {
+    @if mat.get-theme-type($t) == dark {
+      @include mat.elevation(5);
+      background-color: mat.get-theme-color($t, primary, 70);
+    } @else {
+      @include mat.elevation(5);
+      background-color: mat.get-theme-color($t, primary, 50);
+    }
+  }
+}
+
+@mixin typography($t) {
+  .appbar {
+    &-name {
+      font: mat.get-theme-typography($t, headline-small, font);
+    }
+  }
+}
+
+@mixin theme($t) {
+  @if mat.theme-has($t, color) {
+    @include color($t);
+  }
+
+  @if mat.theme-has($t, typography) {
+    @include typography($t);
+  }
+}

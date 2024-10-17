@@ -1,29 +1,48 @@
 @use "@angular/material" as mat;
+// @use "./themes/m3-theme.scss";
+@use "./app/core/layout/header/header-theme" as appbar;
+
 @include mat.core();
 
-$partocheV2-theme: mat.define-theme(
+$dark-theme: mat.define-theme(
+  (
+    color: (
+      theme-type: dark,
+      primary: mat.$violet-palette,
+      tertiary: mat.$rose-palette,
+    ),
+  )
+);
+
+$light-theme: mat.define-theme(
   (
     color: (
       theme-type: light,
       primary: mat.$azure-palette,
       tertiary: mat.$blue-palette,
     ),
-    density: (
-      scale: 0,
-    ),
   )
 );
 
-:root {
-  @include mat.all-component-themes($partocheV2-theme);
+* {
+  transition: background-color 0.1s ease, color 0.1s ease;
 }
-
-@include mat.typography-hierarchy($partocheV2-theme);
 
 html,
 body {
   height: 100%;
 }
+
+html {
+  @include mat.all-component-themes($light-theme);
+  @include appbar.theme($light-theme);
+
+  &.dark {
+    @include mat.all-component-colors($dark-theme);
+    @include appbar.theme($dark-theme);
+  }
+}
+
 body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
