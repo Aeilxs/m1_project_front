@@ -12,16 +12,16 @@
 
   <!-- Navbar default -->
   <nav class="appbar-nav">
-    <button mat-flat-button routerLink="dashboard" class="appbar-nav-item">dashboard</button>
-    <button mat-flat-button routerLink="" class="appbar-nav-item">contracts</button>
-    <button mat-flat-button routerLink="" class="appbar-nav-item">password manager</button>
+    <div *ngFor="let navopt of navMenuOpts()">
+      <button mat-flat-button [routerLink]="navopt.url" class="appbar-nav-item">{{ navopt.label }}</button>
+    </div>
   </nav>
 
   <!-- Navbar small -->
   <mat-menu #menu="matMenu">
-    <button mat-menu-item routerLink="dashboard">Dashboard</button>
-    <button mat-menu-item routerLink="">Contracts</button>
-    <button mat-menu-item routerLink="">Password Manager</button>
+    <div *ngFor="let navopt of navMenuOpts()">
+      <button mat-menu-item [routerLink]="navopt.url">{{ navopt.label }}</button>
+    </div>
   </mat-menu>
 
   <span class="appbar-spacer"></span>
