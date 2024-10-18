@@ -1,5 +1,8 @@
-<app-header></app-header>
-<mat-sidenav-container class="mat-app-background">
-  <router-outlet></router-outlet>
-</mat-sidenav-container>
-<app-footer></app-footer>
+<div class="main"
+     [class]="theme$ | async">
+  <app-header></app-header>
+  <mat-sidenav-container class="mat-app-background">
+    <router-outlet></router-outlet>
+  </mat-sidenav-container>
+  <app-footer></app-footer>
+</div>

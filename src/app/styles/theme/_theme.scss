@@ -22,7 +22,7 @@ $light-theme: mat.define-theme(
   )
 );
 
-html {
+.main {
   @include mat.all-component-themes($light-theme);
   @include theme($light-theme);
 
