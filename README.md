@@ -281,3 +281,24 @@ html {
   }
 }
 ```
+
+---
+
+## A checker
+
+https://www.digitalocean.com/community/tutorials/angular-change-detection-strategy
+
+TLDR: JAMAIS de call fnc dans les boucles d'affichage et dans les templates non plus, pas de call fnc c la contrainte pr optimiser si g bien capté
+
+[18/10/2024 09:48:22] Dimitri TEI: Un gros si tu met pas ça
+[18/10/2024 09:48:38] Dimitri TEI: Tu bouge ta souris ta un composant ça déclenche un cycle
+[18/10/2024 09:49:00] Dimitri TEI: Si ya un Call fonction dans le template et pas ça
+[18/10/2024 09:49:08] Dimitri TEI: Tu retrigger la function
+[18/10/2024 09:49:23] Dimitri TEI: Pour ça aussi jamais de Call function dans les template
+[18/10/2024 09:49:35] Dimitri TEI: Pour boucler ou affiché
+
+```ts
+@Component({
+changeDetection: ChangeDetectionStrategy.OnPush
+})
+```
