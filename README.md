@@ -302,3 +302,10 @@ TLDR: JAMAIS de call fnc dans les boucles d'affichage et dans les templates non 
 changeDetection: ChangeDetectionStrategy.OnPush
 })
 ```
+
+---
+
+Dans les templates HTML les
+
+- [] => inputs qu'on donne au composant
+- () => output que le composant émet

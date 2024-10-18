@@ -14,10 +14,9 @@ function themeFactory(): BehaviorSubject<'dark' | 'light'> {
   return new BehaviorSubject<'dark' | 'light'>(initialTheme);
 }
 
-
 export const THEME_PROVIDERS: Provider[] = [
   {
-      provide: THEME,
-      useFactory: themeFactory,
+    provide: THEME,
+    useFactory: themeFactory,
   },
 ];
