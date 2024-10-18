@@ -1,1 +1,2 @@
-export { NAV_MENU_OPTS } from './menuopts';
+export { NAV_MENU_OPTS } from './navopts';
+export type { MenuOpt } from './navopts';

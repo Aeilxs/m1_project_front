@@ -1,4 +1,4 @@
-interface MenuOpt {
+export interface MenuOpt {
   label: string;
   url: string;
 }

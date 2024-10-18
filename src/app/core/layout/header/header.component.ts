@@ -1,5 +1,6 @@
 import { Component, Inject } from '@angular/core';
 import { THEME } from '@app/core/services/themes/theme.di-tokens';
+import { NAV_MENU_OPTS, MenuOpt } from '@constants/';
 import { BehaviorSubject, Observable } from 'rxjs';
 
 @Component({
@@ -9,6 +10,7 @@ import { BehaviorSubject, Observable } from 'rxjs';
 })
 export class HeaderComponent {
   readonly theme$: Observable<'dark' | 'light'>;
+  readonly navMenuOpts = NAV_MENU_OPTS;
 
   constructor(@Inject(THEME) private theme: BehaviorSubject<'dark' | 'light'>) {
     this.theme$ = this.theme.asObservable();
