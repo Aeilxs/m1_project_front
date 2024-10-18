@@ -1,7 +1,5 @@
 @use "@angular/material" as mat;
 // @use "./themes/m3-theme.scss";
-@use "./app/core/layout/header/header-theme" as appbar;
-
 @include mat.core();
 
 $dark-theme: mat.define-theme(
@@ -24,26 +22,12 @@ $light-theme: mat.define-theme(
   )
 );
 
-* {
-  transition: background-color 0.1s ease, color 0.1s ease;
-}
-
-html,
-body {
-  height: 100%;
-}
-
 html {
   @include mat.all-component-themes($light-theme);
-  @include appbar.theme($light-theme);
+  @include theme($light-theme);
 
   &.dark {
     @include mat.all-component-colors($dark-theme);
-    @include appbar.theme($dark-theme);
+    @include theme($dark-theme);
   }
-}
-
-body {
-  margin: 0;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
 }

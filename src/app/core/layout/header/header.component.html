@@ -12,16 +12,19 @@
 
   <!-- Navbar default -->
   <nav class="appbar-nav">
-    <div *ngFor="let navopt of navMenuOpts()">
-      <button mat-flat-button [routerLink]="navopt.url" class="appbar-nav-item">{{ navopt.label }}</button>
-    </div>
+    <button mat-flat-button routerLink="dashboard" class="appbar-nav-item">dashboard</button>
+    <button mat-flat-button routerLink="" class="appbar-nav-item">contracts</button>
+    <button mat-flat-button routerLink="" class="appbar-nav-item">password manager</button>
   </nav>
 
   <!-- Navbar small -->
   <mat-menu #menu="matMenu">
-    <div *ngFor="let navopt of navMenuOpts()">
-      <button mat-menu-item [routerLink]="navopt.url">{{ navopt.label }}</button>
-    </div>
+    <!-- <div *ngFor="let navopt of navMenuOpts()"> -->
+    <!-- <button mat-menu-item [routerLink]="navopt.url">{{ navopt.label }}</button> -->
+    <!-- </div> -->
+    <button mat-menu-item routerLink="dashboard">Dashboard</button>
+    <button mat-menu-item routerLink="">Contracts</button>
+    <button mat-menu-item routerLink="">Password Manager</button>
   </mat-menu>
 
   <span class="appbar-spacer"></span>
@@ -31,6 +34,6 @@
     <mat-icon>login</mat-icon>
   </button>
   <button class="iconbtn" mat-icon-button (click)="toggleTheme()" aria-label="Toggle theme button">
-    <mat-icon>{{ theme() === "light" ? "light_mode" : "dark_mode" }}</mat-icon>
+    <mat-icon>{{ (theme$ | async) === "light" ? "light_mode" : "dark_mode" }}</mat-icon>
   </button>
 </mat-toolbar>

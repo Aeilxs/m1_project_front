@@ -1,6 +1,6 @@
-import { Component, inject } from '@angular/core';
-import { ThemeManagerService } from '@core/services/theme-manager.service';
-import { NAV_MENU_OPTS } from '@constants/index.ts';
+import { Component, Inject } from '@angular/core';
+import { THEME } from '@app/core/services/themes/theme.di-tokens';
+import { BehaviorSubject, Observable } from 'rxjs';
 
 @Component({
   selector: 'app-header',
@@ -8,14 +8,13 @@ import { NAV_MENU_OPTS } from '@constants/index.ts';
   styleUrl: './header.component.scss',
 })
 export class HeaderComponent {
-  private themeManager = inject(ThemeManagerService);
-  theme = this.themeManager.theme;
+  readonly theme$: Observable<'dark' | 'light'>;
 
-  navMenuOpts() {
-    return NAV_MENU_OPTS;
+  constructor(@Inject(THEME) private theme: BehaviorSubject<'dark' | 'light'>) {
+    this.theme$ = this.theme.asObservable();
   }
 
   toggleTheme() {
-    this.themeManager.toggleTheme();
+    this.theme.next(this.theme.value === 'dark' ? 'light' : 'dark');
   }
 }
