@@ -29,7 +29,7 @@
                 "input": "public"
               }
             ],
-            "styles": ["src/main.scss"],
+            "styles": ["src/app/styles/main.scss"],
             "scripts": []
           },
           "configurations": {
@@ -83,11 +83,14 @@
                 "input": "public"
               }
             ],
-            "styles": ["src/main.scss"],
+            "styles": ["src/app/styles/main.scss"],
             "scripts": []
           }
         }
       }
     }
+  },
+  "cli": {
+    "analytics": false
   }
 }
